@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Phone, Mail, Globe, Instagram, Linkedin, Facebook, Download, ShieldCheck, ChevronRight, MessageCircle } from 'lucide-react'
 import './index.css'
 
 function App() {
+  const [showCta, setShowCta] = useState(false);
+  const linksRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShowCta(true);
+        } else {
+          setShowCta(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (linksRef.current) {
+      observer.observe(linksRef.current);
+    }
+
+    return () => {
+      if (linksRef.current) observer.unobserve(linksRef.current);
+    };
+  }, []);
+
   const data = {
     name: "Alfonso Recio",
     role: "Gerente comercial",
@@ -110,7 +134,7 @@ END:VCARD`;
 
         {/* Links */}
         <h3 className="section-title">Presencia Digital</h3>
-        <div className="links-container">
+        <div className="links-container" ref={linksRef}>
           <a href={data.website} target="_blank" rel="noopener noreferrer" className="link-card">
             <div className="link-card-left">
               <div className="link-icon-container">
@@ -181,7 +205,7 @@ END:VCARD`;
 
       {/* Floating WhatsApp Area */}
       <div className="floating-whatsapp-wrapper">
-        <div className="whatsapp-cta-container">
+        <div className={`whatsapp-cta-container ${showCta ? 'visible' : ''}`}>
           <span className="whatsapp-cta-text">¡Únete a la Kalma!</span>
           <svg className="whatsapp-cta-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h13" />

@@ -364,26 +364,36 @@ body {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  animation: float-cta 3s ease-in-out infinite;
-  transform-origin: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: right center;
+}
+
+.whatsapp-cta-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  animation: float-cta 3s ease-in-out infinite 0.5s;
 }
 
 .whatsapp-cta-text {
   font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
   font-size: 1.25rem;
-  color: var(--primary-tech);
+  color: var(--white);
   font-weight: 800;
   white-space: nowrap;
   letter-spacing: 0.5px;
-  background: var(--white);
+  background: var(--accent-cyan);
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 1px solid var(--border-gray);
+  box-shadow: 0 4px 12px rgba(18, 199, 207, 0.3);
+  border: none;
 }
 
 .whatsapp-cta-arrow {
-  color: var(--primary-blue);
+  color: var(--accent-cyan);
   transform: rotate(15deg);
   margin-top: 5px;
 }
