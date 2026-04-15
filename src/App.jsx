@@ -4,18 +4,18 @@ import './index.css'
 
 function App() {
   const data = {
-    name: "Santiago Ruiz Prieto",
-    role: "Asesor experto en telecomunicaciones, energía y seguridad",
-    slogan: "Bienvenido a la Kalma",
-    email: "santiago@solucionesconkalma.es",
-    phone: "646441717",
-    phoneUrl: "+34646441717",
+    name: "Alfonso Recio",
+    role: "Gerente comercial",
+    slogan: "Porque lo que mereces debe ser simple y efectivo",
+    email: "alfonso@solucionesconkalma.es",
+    phone: "673646345",
+    phoneUrl: "+34673646345",
     website: "https://solucionesconkalma.es/",
     instagram: "https://www.instagram.com/solucionesconkalmasl?igsh=MTVwNWQ5ZW0wOXR0ZA%3D%3D&utm_source=qr",
-    linkedin: "https://www.linkedin.com/in/santiago-ruiz-prieto/",
-    facebook: "https://www.facebook.com/share/17Nq3Xv7HM/?mibextid=wwXIfr",
+    linkedin: "https://www.linkedin.com/in/alfonso-recio-sanchez-681b37357",
+    facebook: "https://www.facebook.com/profile.php?id=61583843648352",
     logoUrl: "/logo - soluciones con kalma.png",
-    profileImgUrl: "/santiago.jpeg",
+    profileImgUrl: "/alfonso.jpeg",
     bgOverlayUrl: "/fondo.png",
     seviaiLogoUrl: "/logo_sin_fondo.png"
   }
@@ -35,7 +35,7 @@ END:VCARD`;
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'santiago_ruiz_prieto.vcf');
+    link.setAttribute('download', 'alfonso_recio.vcf');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -76,7 +76,7 @@ END:VCARD`;
       {/* Profile Area */}
       <section className="profile-section">
         <div className="profile-img-container">
-          <img src={data.profileImgUrl} alt={data.name} className="profile-img" onError={(e) => { e.target.src = 'https://ui-avatars.com/api/?name=Santiago+Ruiz&background=12C7CF&color=fff&size=200' }} />
+          <img src={data.profileImgUrl} alt={data.name} className="profile-img" onError={(e) => { e.target.src = 'https://ui-avatars.com/api/?name=Alfonso+Recio&background=12C7CF&color=fff&size=200' }} />
         </div>
       </section>
 
@@ -188,7 +188,7 @@ END:VCARD`;
       {/* Floating WhatsApp Button */}
       <div className="floating-actions">
         <a 
-          href={`https://wa.me/${data.phoneUrl.replace('+', '')}?text=Hola%20Santiago,%20vengo%20de%20tu%20tarjeta%20digital.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n.`}
+          href={`https://wa.me/${data.phoneUrl.replace('+', '')}?text=Hola%20Alfonso,%20vengo%20de%20tu%20tarjeta%20digital.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n.`}
           target="_blank" 
           rel="noopener noreferrer" 
           className="fab fab-whatsapp"
