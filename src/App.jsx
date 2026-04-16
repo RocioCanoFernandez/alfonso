@@ -35,6 +35,7 @@ function App() {
     phone: "673646345",
     phoneUrl: "+34673646345",
     website: "https://solucionesconkalma.es/",
+    hubUrl: "https://hub-hub-alfonso.npfusf.easypanel.host/",
     instagram: "https://www.instagram.com/solucionesconkalmasl?igsh=MTVwNWQ5ZW0wOXR0ZA%3D%3D&utm_source=qr",
     linkedin: "https://www.linkedin.com/in/alfonso-recio-sanchez-681b37357",
     facebook: "https://www.facebook.com/profile.php?id=61583843648352",
@@ -52,6 +53,7 @@ TITLE:${data.role}
 TEL;TYPE=WORK,VOICE:${data.phoneUrl}
 EMAIL;TYPE=PREF,INTERNET:${data.email}
 URL:${data.website}
+URL:${data.hubUrl}
 END:VCARD`;
 
   const handleDownloadVCard = () => {
